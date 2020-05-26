@@ -9,7 +9,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float turnSpeed = 20f;
-    public float speed = 2f;
+    public float walkSpeed;
+    public float runSpeed;
 
     Animator m_Animator;
     Rigidbody m_Rigidbody;
@@ -36,9 +37,19 @@ public class PlayerMovement : MonoBehaviour
         bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
         bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput;
-        m_Animator.SetBool("IsWalking", isWalking);
+        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        if (isRunning)
+        {
+            m_Animator.SetBool("IsWalking", false);
+            m_Animator.SetBool("IsRunning", isRunning);
+        }
+        else
+        {
+            m_Animator.SetBool("IsRunning", isRunning);
+            m_Animator.SetBool("IsWalking", isWalking);
+        }
 
-        if (isWalking)
+        if (isWalking || isRunning)
         {
             if(!m_AudioSource.isPlaying)
             {
@@ -60,8 +71,15 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    transform.Translate(runSpeed * Vector3.forward * Time.deltaTime);
+                }
                 // If pressing any of the direction key, go ahead
-                transform.Translate(speed * Vector3.forward * Time.deltaTime);
+                else
+                {
+                    transform.Translate(walkSpeed * Vector3.forward * Time.deltaTime);
+                }
             }
                 
             m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
