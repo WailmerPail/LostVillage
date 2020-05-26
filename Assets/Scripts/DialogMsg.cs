@@ -9,10 +9,10 @@ public class DialogMsg : MonoBehaviour
     public GameObject nameText;
     public GameObject messageText;
     // Start is called before the first frame update
-    public static int maxshowFrame = 1000;
-    public int leftshowFrame = 1000;
+    public static int maxshowFrame = 800;
+    public int leftshowFrame = 800;
     private bool visible = false;
-
+    public AudioSource CurrentCV;
     void Start()
     {
         //gameObject.SetActive(false);
@@ -52,12 +52,14 @@ public class DialogMsg : MonoBehaviour
         root.alpha = 1;
         root.interactable = true;
         root.blocksRaycasts = true;
+        CurrentCV.Play();
     }
 
     void hide() {
         root.alpha = 0;
         root.interactable = false;
         root.blocksRaycasts = false;
+       // CurrentCV.Stop();
     }
 
 }
