@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DialogTestScript : MonoBehaviour
 {
-    public DialogMsg msgCaller = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +15,7 @@ public class DialogTestScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            msgCaller.SetReminder("VINA", "aaafsdfsdfsfsdfsdfs msg", "VINA_happy");
+            GameObject.Find("DialogCanvas").GetComponent<DialogMsg>().SetReminder("VINA", "aaafsdfsdfsfsdfsdfs msg", "VINA_happy");
         }
     }
 }

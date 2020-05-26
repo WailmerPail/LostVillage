@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DialogMsg : MonoBehaviour
 {
+    public CanvasGroup root;
     public Image headImage;
     public GameObject nameText;
     public GameObject messageText;
@@ -14,7 +15,8 @@ public class DialogMsg : MonoBehaviour
 
     void Start()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        hide();
         visible = false;
 
     }
@@ -30,18 +32,32 @@ public class DialogMsg : MonoBehaviour
         if (leftshowFrame == 0)
         {
             leftshowFrame = maxshowFrame;
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            hide();
             visible = false;
         }
     }
 
     public void SetReminder(string name, string message, string image)
     {
-        gameObject.SetActive(true);
+        //gameObject.SetActive(true);
+        show();
         visible = true;
         nameText.GetComponentInChildren<Text>().text = name;
         messageText.GetComponentInChildren<Text>().text = message;
         headImage.sprite = Resources.Load<Sprite>(image);
+    }
+
+    void show() {
+        root.alpha = 1;
+        root.interactable = true;
+        root.blocksRaycasts = true;
+    }
+
+    void hide() {
+        root.alpha = 0;
+        root.interactable = false;
+        root.blocksRaycasts = false;
     }
 
 }
