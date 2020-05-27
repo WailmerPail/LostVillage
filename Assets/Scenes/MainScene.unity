@@ -5582,6 +5582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eec8f45f958b914b8eaf4d32b89903e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  root: {fileID: 32738219}
   player: {fileID: 1168333536}
   message: '"Look at that,  there is a key,  maybe it could be used to..."'
   avatar: VINA_happy
