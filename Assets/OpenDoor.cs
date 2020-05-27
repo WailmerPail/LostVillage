@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
-    public bool isKeyAExisted;
+    public static int leftKeyNum;
 
     public bool isPlayerEnter;
 
@@ -26,10 +26,11 @@ public class OpenDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isKeyAExisted && isPlayerEnter && !_isOpen && !_openDoor)
+        if ((leftKeyNum > 0) && isPlayerEnter && !_isOpen && !_openDoor)
         {
             Debug.Log("Opening Door");
             _isOpen = true;
+            leftKeyNum--;
         }
         if (_isOpen && transform.rotation.y > degree)
         {

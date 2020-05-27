@@ -10,8 +10,8 @@ public class DialogMsg : MonoBehaviour
     public GameObject messageText;
     public AudioSource CurrentCV;
     // Start is called before the first frame update
-    public static int maxshowFrame = 800;
-    public int leftshowFrame = 800;
+    public static int maxshowFrame = 400;
+    public int leftshowFrame = 400;
     private bool visible = false;
     void Start()
     {
