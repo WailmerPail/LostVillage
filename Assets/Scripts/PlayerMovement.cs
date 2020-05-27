@@ -38,14 +38,14 @@ public class PlayerMovement : MonoBehaviour
         bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput;
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        if (isRunning)
+        if (isRunning & isWalking)
         {
             m_Animator.SetBool("IsWalking", false);
             m_Animator.SetBool("IsRunning", isRunning);
         }
         else
         {
-            m_Animator.SetBool("IsRunning", isRunning);
+            m_Animator.SetBool("IsRunning", false);
             m_Animator.SetBool("IsWalking", isWalking);
         }
 
