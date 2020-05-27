@@ -2592,8 +2592,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -229, y: -76}
-  m_SizeDelta: {x: 119.56195, y: 40.783478}
+  m_AnchoredPosition: {x: -214.72, y: -61.995}
+  m_SizeDelta: {x: 148.12, y: 68.79262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &833312970
 MonoBehaviour:
@@ -2615,10 +2615,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -2766,27 +2766,8 @@ MonoBehaviour:
   headImage: {fileID: 1261668449}
   nameText: {fileID: 833312968}
   messageText: {fileID: 400496764}
-  leftshowFrame: 800
   CurrentCV: {fileID: 0}
-  CVA: {fileID: 1762162802}
-  CVAA: {fileID: 1241693582}
-  CVEMM1: {fileID: 2024838809}
-  CVEMM3: {fileID: 1106069583}
-  CVENN: {fileID: 1158680809}
-  CVHA: {fileID: 980315952}
-  CVHHA: {fileID: 14403048}
-  CVHHHA: {fileID: 1847928451}
-  CVHey_big: {fileID: 886999721}
-  CVHey_deep: {fileID: 1113637785}
-  CVHey_type2: {fileID: 603995603}
-  CVHum: {fileID: 588466752}
-  CVNo: {fileID: 249832786}
-  CVNope: {fileID: 2025705091}
-  CVOh: {fileID: 1172435313}
-  CVOh2: {fileID: 545971963}
-  CVSorry: {fileID: 955181775}
-  CVWait: {fileID: 1627414288}
-  CVYes: {fileID: 1100856092}
+  leftshowFrame: 800
 --- !u!1 &859499104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3459,7 +3440,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -2, y: 5.6568537, z: 6.343146}
+  m_LocalPosition: {x: -10.8, y: 5.656854, z: -1.5468543}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5557,6 +5538,67 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1246985488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1246985489}
+  - component: {fileID: 1246985491}
+  - component: {fileID: 1246985490}
+  m_Layer: 0
+  m_Name: PointofView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1246985489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246985488}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.89, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 32738220}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1246985490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246985488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eec8f45f958b914b8eaf4d32b89903e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1168333536}
+  message: '"Look at that,  there is a key,  maybe it could be used to..."'
+  avatar: VINA_happy
+  Audio: CV_HEY_BIG
+--- !u!65 &1246985491
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246985488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1258071036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6242,7 +6284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626970442}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -2, y: 5.6568537, z: 6.343146}
+  m_LocalPosition: {x: -10.8, y: 5.656854, z: -1.5468543}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1667346048}
@@ -11140,7 +11182,7 @@ PrefabInstance:
     - target: {fileID: 537949148843146067, guid: b21095a72cbf8451f8cb9b45ee45bbcd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -10.8
       objectReference: {fileID: 0}
     - target: {fileID: 537949148843146067, guid: b21095a72cbf8451f8cb9b45ee45bbcd,
         type: 3}
@@ -11150,7 +11192,7 @@ PrefabInstance:
     - target: {fileID: 537949148843146067, guid: b21095a72cbf8451f8cb9b45ee45bbcd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12
+      value: 4.11
       objectReference: {fileID: 0}
     - target: {fileID: 537949148843146067, guid: b21095a72cbf8451f8cb9b45ee45bbcd,
         type: 3}
