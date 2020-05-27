@@ -8,11 +8,11 @@ public class DialogMsg : MonoBehaviour
     public Image headImage;
     public GameObject nameText;
     public GameObject messageText;
+    public AudioSource CurrentCV;
     // Start is called before the first frame update
     public static int maxshowFrame = 800;
     public int leftshowFrame = 800;
     private bool visible = false;
-    public AudioSource CurrentCV;
     void Start()
     {
         //gameObject.SetActive(false);
@@ -38,14 +38,14 @@ public class DialogMsg : MonoBehaviour
         }
     }
 
-    public void SetReminder(string name, string message, string image)
+    public void SetReminder(string name, string message, string image, string cv)
     {
-        //gameObject.SetActive(true);
-        show();
         visible = true;
         nameText.GetComponentInChildren<Text>().text = name;
         messageText.GetComponentInChildren<Text>().text = message;
         headImage.sprite = Resources.Load<Sprite>(image);
+        CurrentCV = GameObject.Find(cv).GetComponent<AudioSource>();
+        show();
     }
 
     void show() {
@@ -59,7 +59,8 @@ public class DialogMsg : MonoBehaviour
         root.alpha = 0;
         root.interactable = false;
         root.blocksRaycasts = false;
-       // CurrentCV.Stop();
+        CurrentCV.Stop();
     }
+
 
 }

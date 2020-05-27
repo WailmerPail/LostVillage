@@ -15,7 +15,7 @@ public class DialogTestScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject.Find("DialogCanvas").GetComponent<DialogMsg>().SetReminder("VINA", "aaafsdfsdfsfsdfsdfs msg", "VINA_happy");
+            GameObject.Find("DialogCanvas").GetComponent<DialogMsg>().SetReminder("VINA", "aaafsdfsdfsfsdfsdfs msg", "VINA_happy", "CV_HEY_BIG");
         }
     }
 }
