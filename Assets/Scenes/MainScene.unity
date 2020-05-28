@@ -1604,9 +1604,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 837078845}
-  message: 
-  avatar: 
-  Audio: 
+  message: What, this book said that there is a little girl with terrible power.
+    So her was arrested and studied. It can't... the little girl in this book seems
+    to be me.
+  avatar: VINA_normal
+  Audio: CV_NO
 --- !u!65 &205903820
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2404,8 +2406,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.6, y: -173.5}
-  m_SizeDelta: {x: 525.29047, y: 114.91994}
+  m_AnchoredPosition: {x: 97.9, y: -168.1}
+  m_SizeDelta: {x: 709.9543, y: 125.656204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &400496766
 MonoBehaviour:
@@ -5623,7 +5625,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -1, y: 5.6568546, z: 14.343145}
+  m_LocalPosition: {x: -26.31, y: 5.656854, z: -6.4468546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8489,9 +8491,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 1409202694}
-  message: 
-  avatar: 
-  Audio: 
+  message: What it this, a text comparison table? Perhaps it is a record of something.
+    Anyway, why are these books here. Could You help me to collect all these books!
+  avatar: VINA_normal
+  Audio: CV_ENNN
 --- !u!65 &1341610738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9537,7 +9540,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626970442}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -1, y: 5.6568546, z: 14.343145}
+  m_LocalPosition: {x: -26.31, y: 5.656854, z: -6.4468546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1667346048}
@@ -10018,9 +10021,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 367089687}
-  message: 
-  avatar: 
-  Audio: 
+  message: This book seems to have the most power, but I don't quite understand it.
+    Can you help me collect other books?
+  avatar: VINA_blink
+  Audio: CV_SORRY
 --- !u!65 &1687226927
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10357,9 +10361,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 288439427}
-  message: 
-  avatar: 
-  Audio: 
+  message: Hey, get closer. What does this say, ability, seize ... terrible? I have
+    to research these books.
+  avatar: VINA_normal
+  Audio: CV_WAIT
 --- !u!65 &1718079051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14951,9 +14956,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 903108978}
-  message: 
-  avatar: 
-  Audio: 
+  message: The book said that, "I was assigned to investigate what happened in this
+    institute and studied it for a month. I finally figured it out. This little girl
+    is of power. She even could tear up time and space. and sealed the researchers
+    into the stone.  In fact, the stone statues you can see in this room are actually
+    researchers from ten years ago. "
+  avatar: VINA_normal
+  Audio: CV_AA
 --- !u!65 &2042435709
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15315,7 +15324,7 @@ PrefabInstance:
     - target: {fileID: 537949148843146067, guid: b21095a72cbf8451f8cb9b45ee45bbcd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -26.31
       objectReference: {fileID: 0}
     - target: {fileID: 537949148843146067, guid: b21095a72cbf8451f8cb9b45ee45bbcd,
         type: 3}
@@ -15325,7 +15334,7 @@ PrefabInstance:
     - target: {fileID: 537949148843146067, guid: b21095a72cbf8451f8cb9b45ee45bbcd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20
+      value: -0.79
       objectReference: {fileID: 0}
     - target: {fileID: 537949148843146067, guid: b21095a72cbf8451f8cb9b45ee45bbcd,
         type: 3}

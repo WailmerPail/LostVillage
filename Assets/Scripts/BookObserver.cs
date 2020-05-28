@@ -8,6 +8,7 @@ public class BookObserver : MonoBehaviour
     public string message = "";
     public string avatar = "";
     public string Audio = "";
+    private static int numberOfBook = 5;
     private bool m_IsPlayerInRange;
     private bool flag_onlytriggerOnce = true;
 
@@ -45,9 +46,16 @@ public class BookObserver : MonoBehaviour
             if (m_IsPlayerInRange)
             {
                 print("I am picked!"); 
-                if(message != "")
-                    GameObject.Find("DialogCanvas").GetComponent<DialogMsg>().SetReminder("VINA", message, avatar, Audio);
                 flag_onlytriggerOnce = false;
+                BookObserver.numberOfBook++;
+                if (BookObserver.numberOfBook == 6) {
+                    GameObject.Find("DialogCanvas").GetComponent<DialogMsg>().SetReminder("VINA", "I understand what the energy in these books is.This is my previous energy, or you can call it power. They were Scattered into these books during the previous rampage.That incident sealed myself into the Time.Maybe. . I need your help, can you go North?I now open a portal. Maybe you can enter the void and pull me back.",
+                        "VINA_normal", "CV_HEY_DEEP");
+                    return;
+                }
+
+                if (message != "")
+                    GameObject.Find("DialogCanvas").GetComponent<DialogMsg>().SetReminder("VINA", message, avatar, Audio);
                 root.SetActive(false);
             }
         }
