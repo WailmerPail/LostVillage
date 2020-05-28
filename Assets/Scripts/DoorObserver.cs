@@ -27,4 +27,12 @@ public class DoorObserver : MonoBehaviour
         }
         
     }
+
+    private void OnTriggerExit(Collider other) {
+        if (other.transform == player)
+        {
+            Debug.Log("Player out");
+            gameObject.GetComponentInParent<OpenDoor>().isPlayerEnter = false;
+        }
+    }
 }

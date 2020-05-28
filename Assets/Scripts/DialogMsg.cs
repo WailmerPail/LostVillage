@@ -38,13 +38,15 @@ public class DialogMsg : MonoBehaviour
         }
     }
 
-    public void SetReminder(string name, string message, string image, string cv)
+    public void SetReminder(string name, string message, string image, string cv, int frame)
     {
         visible = true;
         nameText.GetComponentInChildren<Text>().text = name;
         messageText.GetComponentInChildren<Text>().text = message;
         headImage.sprite = Resources.Load<Sprite>(image);
         CurrentCV = GameObject.Find(cv).GetComponent<AudioSource>();
+        maxshowFrame = frame;
+        leftshowFrame = frame;
         show();
     }
 

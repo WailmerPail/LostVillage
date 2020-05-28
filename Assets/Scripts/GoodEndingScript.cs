@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogTestScript : MonoBehaviour
+public class GoodEndingScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,9 +13,16 @@ public class DialogTestScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (false)
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == GameObject.Find("Model_Professor"))
         {
-            GameObject.Find("DialogCanvas").GetComponent<DialogMsg>().SetReminder("VINA", "aaafsdfsdfsfsdfsdfs msg", "VINA_happy", "CV_HEY_BIG", 200);
+            Debug.Log("Good Ending");
+            GameEnding.isGoodEnding = true;
         }
+
     }
 }

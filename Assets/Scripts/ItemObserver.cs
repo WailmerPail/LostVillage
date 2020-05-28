@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemObserver : MonoBehaviour
 {
-    public GameObject root;
+    public GameObject root = null;
     public string message = "";
     public string avatar = "";
     public string Audio = "";
@@ -39,12 +39,18 @@ public class ItemObserver : MonoBehaviour
         if (m_IsPlayerInRange && flag_onlytriggerOnce)
         {
             if(message != "")
-                GameObject.Find("DialogCanvas").GetComponent<DialogMsg>().SetReminder("VINA", message, avatar, Audio);
-            OpenDoor.leftKeyNum++;
+                GameObject.Find("DialogCanvas").GetComponent<DialogMsg>().SetReminder("VINA", message, avatar, Audio, 200);
+
             flag_onlytriggerOnce = false;
         }
         if (Input.GetKeyDown(KeyCode.F)) {
             if (m_IsPlayerInRange) {
+                if (root != null)
+                {
+                    OpenDoor.leftKeyNum++;
+                    GameObject.Find("ItemCanvas").GetComponent<ItemUIscript>().setNumberofKey(OpenDoor.leftKeyNum);
+                    print("you get a key!");
+                }
                 print("I am picked!");
                 root.SetActive(false);
             }
