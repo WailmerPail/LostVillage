@@ -7,6 +7,7 @@ public class GameEnding : MonoBehaviour
 {
     public float fadeDuration = 1f;
     public float displayImageDuration = 1f;
+    public float exitTime=240 * 30f;
     public GameObject player;
     public CanvasGroup exitBackgroundImageCanvasGroup;
     public AudioSource exitAudio;
@@ -65,9 +66,13 @@ public class GameEnding : MonoBehaviour
             {
                 SceneManager.LoadScene(0);
             }
-            else 
+            else if(m_Timer > exitTime)
             {
-                Application.Quit();
+                SceneManager.LoadScene(0);
+            }
+            else if (Input.GetKey(KeyCode.Return))
+            {
+                SceneManager.LoadScene(0);
             }
         }
     }
