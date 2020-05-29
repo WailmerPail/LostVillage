@@ -18,6 +18,7 @@ public class DialogMsg : MonoBehaviour
         //gameObject.SetActive(false);
         hide();
         visible = false;
+        Application.targetFrameRate = 60;
 
     }
 

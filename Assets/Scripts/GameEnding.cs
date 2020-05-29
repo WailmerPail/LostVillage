@@ -72,6 +72,7 @@ public class GameEnding : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.Return))
             {
+                isGoodEnding = false;
                 SceneManager.LoadScene(0);
             }
         }
