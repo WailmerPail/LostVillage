@@ -9,7 +9,7 @@ public class BookObserver : MonoBehaviour
     public string avatar = "";
     public string Audio = "";
     public int dialogFrame = 400;
-    private static int numberOfBook = 0;
+    public static int numberOfBook = 0;
     private bool m_IsPlayerInRange;
     private bool flag_onlytriggerOnce = true;
 

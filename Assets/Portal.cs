@@ -10,6 +10,10 @@ public class Portal : MonoBehaviour
     private bool _playerCollide;
     private bool _notTranslate;
     public GameObject player;
+    public string message;
+    public string avatar;
+    public string Audio;
+    public int dialogFrame = 400;
     void Start()
     {
         _playerCollide = false;
@@ -21,23 +25,31 @@ public class Portal : MonoBehaviour
     {
         if (_playerCollide)
         {
-            var i = 0;
-            bool allCutoff1 = true;
-            while (i < 4 && _notTranslate)
+            Debug.Log("Collide");
+            if (BookObserver.numberOfBook == 6)
             {
-                player.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[i].SetFloat( "_Cutoff", Mathf.Lerp(player.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[i].GetFloat("_Cutoff"), 1f, Time.deltaTime * speed));
-                if (player.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[i].GetFloat("_Cutoff") < 0.15f)
+                var i = 0;
+                bool allCutoff1 = true;
+                while (i < 4 && _notTranslate)
                 {
-                    allCutoff1 = false;
+                    player.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[i].SetFloat( "_Cutoff", Mathf.Lerp(player.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[i].GetFloat("_Cutoff"), 1f, Time.deltaTime * speed));
+                    if (player.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[i].GetFloat("_Cutoff") < 0.15f)
+                    {
+                        allCutoff1 = false;
+                    }
+                    i += 1;
                 }
-                i += 1;
-            }
 
-            if (allCutoff1)
+                if (allCutoff1)
+                {
+                    player.transform.position = new Vector3(20f, 0f, 15f);
+                    _playerCollide = false;
+                    _notTranslate = false;
+                }
+            }
+            else
             {
-                player.transform.position = new Vector3(20f, 0f, 15f);
-                _playerCollide = false;
-                _notTranslate = false;
+                GameObject.Find("DialogCanvas").GetComponent<DialogMsg>().SetReminder("VINA", message, avatar, Audio, dialogFrame);
             }
         }
         else if (!_notTranslate && player.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].GetFloat("_Cutoff") > 0f)
@@ -63,10 +75,16 @@ public class Portal : MonoBehaviour
         Debug.Log("Collide gate"); 
         if (other.gameObject == player)
         {
-            // other.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].shader = Shader.Find("Unlit/Transparent");
             _playerCollide = true;
-            // other.gameObject.GetComponent<Renderer>().material.color = Color.Lerp(other.gameObject.GetComponent<Renderer>().material.color, new Color(1, 1, 1, 1), Time.deltaTime * Speed);
+        }
+    }
 
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject == player)
+        {
+            _playerCollide = false;
         }
     }
 }
+

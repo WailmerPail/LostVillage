@@ -49,10 +49,11 @@ public class PlayerMovement : MonoBehaviour
             m_Animator.SetBool("IsWalking", isWalking);
         }
 
-        if (isWalking || isRunning)
+        if (isWalking)
         {
             if(!m_AudioSource.isPlaying)
             {
+                Debug.Log("Play walk");
                 m_AudioSource.Play();
             }
         }
