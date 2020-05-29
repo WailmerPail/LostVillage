@@ -65,14 +65,17 @@ public class GameEnding : MonoBehaviour
             if (doRestart)
             {
                 SceneManager.LoadScene(0);
+                BookObserver.numberOfBook = 0;
             }
             else if(m_Timer > exitTime)
             {
                 SceneManager.LoadScene(0);
+                BookObserver.numberOfBook = 0;
             }
             else if (Input.GetKey(KeyCode.Return))
             {
                 isGoodEnding = false;
+                BookObserver.numberOfBook = 0;
                 SceneManager.LoadScene(0);
             }
         }

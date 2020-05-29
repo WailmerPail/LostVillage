@@ -13,7 +13,11 @@ public class BookObserver : MonoBehaviour
     private bool m_IsPlayerInRange;
     private bool flag_onlytriggerOnce = true;
 
-
+    void start()
+    {
+        numberOfBook = 0;
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == GameObject.Find("Model_Professor"))

@@ -25,8 +25,8 @@ public class Portal : MonoBehaviour
     {
         if (_playerCollide)
         {
-            Debug.Log("Collide");
-            if (BookObserver.numberOfBook == 6)
+            Debug.Log("Collected book number: " + BookObserver.numberOfBook);
+            if (BookObserver.numberOfBook >= 6)
             {
                 var i = 0;
                 bool allCutoff1 = true;
